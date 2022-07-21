@@ -1,0 +1,22 @@
+﻿@model BFStabilityEvaluation.Models.LoginViewModels.LoginViewModel
+@{ ViewData["Title"] = "Авторизация"; }
+
+<div class="row login">
+    <div class="col-12 col-md-6 offset-md-3">
+        <h2>Вход</h2>
+        <form action="@Url.Action("Index", "Login")" method="post" class="form-hotizontal">
+            <div class="mb-3">
+                <label asp-for="Username">Логин</label>
+                <input asp-for="Username" type="text" class="form-control email" />
+                <span asp-validation-for="Username"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password">Пароль</label>
+                <input asp-for="Password" class="form-control" required />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <input type="submit" value="Войти" class="btn btn-outline-dark form-control" />
+        </form>
+    </div>
+</div>

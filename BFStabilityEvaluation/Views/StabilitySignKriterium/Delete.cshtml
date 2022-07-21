@@ -1,0 +1,45 @@
+﻿@model StabilitySignKriterium
+@{
+    ViewData["Title"] = "Значения параметров";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+        <h2>@ViewData["Title"]</h2>
+        
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="Name" readonly />
+            <label asp-for="Name">Наименование</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="Unit" readonly>
+            <label asp-for="Unit">Единицы измерения</label>
+        </div>
+        <div class="form-floating mb-3" >
+            <input class="form-control" type="text" asp-for="Rang" readonly>
+            <label asp-for="Rang">Ранг</label>
+        </div>
+        <div  class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="AcceptableDelta" readonly>
+            <label asp-for="AcceptableDelta">Допустимое отклонение</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="ActionType" readonly>
+            <label asp-for="ActionType">Тип действия</label>
+        </div>
+
+
+
+
+        <form method="post" asp-controller="StabilitySignKriterium" asp-action="Delete">
+           
+            <div class="form-group">
+                <input class="btn btn-outline-danger" type="submit" name="submit" value="Удалить" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+

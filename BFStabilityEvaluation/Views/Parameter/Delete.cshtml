@@ -1,0 +1,45 @@
+﻿@model Parameter
+@{
+    ViewData["Title"] = "Удалить параметр";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12 col-md-8 offset-md-2">
+        <h2>@ViewData["Title"]</h2>
+        
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="Name" readonly />
+            <label asp-for="Name">Наименование</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="Alias" readonly>
+            <label asp-for="Alias">Краткое название</label>
+        </div>
+        <div class="form-floating mb-3" >
+            <input class="form-control" type="text" asp-for="Unit" readonly>
+            <label asp-for="Unit">Единица измерения</label>
+        </div>
+        <div  class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="MinValue" readonly>
+            <label asp-for="MinValue">Минимальное значение</label>
+        </div>
+        <div  class="form-floating mb-3">
+            <input class="form-control" type="text" asp-for="MaxValue" readonly>
+            <label asp-for="MaxValue">Максимальное значение</label>
+        </div>
+
+
+
+
+        <form method="post" asp-controller="Parameter" asp-action="Delete">
+           
+            <div class="form-group">
+                <input class="btn btn-outline-danger" type="submit" name="submit" value="Удалить" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Отмена</a>
+            </div>
+        </form>
+    </div>
+</div>
+

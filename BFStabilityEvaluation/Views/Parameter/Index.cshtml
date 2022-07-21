@@ -1,0 +1,41 @@
+﻿@model List<BFStabilityEvaluation.Models.Parameter>
+@{ ViewData["Title"] = "Параметры"; }
+
+
+
+<h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
+<hr />
+<table class="table table-hover table-client text-center caption-top">
+    <caption><a class="btn btn-outline-dark" asp-controller="Product" asp-action="Create">Добавить параметр</a></caption>
+  
+    <thead>
+        <tr>
+           
+            <th>Наименование</th>
+            <th>Код</th>
+            <th>Единица измерения</th>
+            <th>Наименьшее значение</th>
+            <th>Наибольшее значение</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    
+    <td>@item.Name</td>
+    <td>@item.Alias</td>
+    <td>@item.Unit</td>
+    <td>@item.MinValue</td>
+    <td>@item.MaxValue</td>
+    <td>
+        <a asp-controller="Parameter" asp-action="Edit" asp-route-id="@item.IdParam" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
+        |
+        <a asp-controller="Parameter" asp-action="Delete" asp-route-id="@item.IdParam" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
+    </td>
+
+
+</tr>}
+    </tbody>
+</table>

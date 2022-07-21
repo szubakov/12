@@ -1,0 +1,249 @@
+﻿body {
+    font-family: 'Century Gothic',sans-serif;
+}
+
+.body-container {
+    min-height: calc(100vh - 66px);
+    margin-bottom: 60px;
+}
+
+.row > * {
+    margin-top: 1rem;
+}
+
+.form-check-input {
+    border-color: #5dd;
+}
+
+.search-input {
+    border-color: #212529;
+}
+
+.form-check-input:checked {
+    background-color: #343a40;
+}
+
+label {
+    letter-spacing: .1rem;
+}
+
+.bi-pencil {
+    color: #000;
+}
+
+.bi-trash {
+    color: red;
+}
+
+.photo {
+    height: 35px;
+    border-radius: 100px;
+    border: 1px solid #5dd;
+}
+
+.info-panel {
+    font-size: .875em;
+}
+
+    .info-panel .valid-feedback {
+        display: block;
+    }
+
+.checkbox {
+    color: #fff;
+    background-color: #6c757d;
+}
+
+.photoBig {
+    width: 50px;
+    border: 1px solid #ccc;
+    border-radius: 100px;
+    margin: 1em 0;
+}
+
+    .photoBig:hover {
+        border-color: #fba;
+        -webkit-box-shadow: 0px 4px 8px 0px rgba(255,164,150,0.3);
+        -moz-box-shadow: 0px 4px 8px 0px rgba(255,164,150,0.3);
+        box-shadow: 0px 4px 8px 0px rgba(255,164,150,0.3);
+    }
+
+textarea.form-control {
+    min-height: 150px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+h2 {
+    margin-top: 1rem;
+}
+
+.table tbody tr td {
+    vertical-align: middle;
+}
+
+/* Валидация **********/
+
+.field-validation-error,
+.validation-summary-errors {
+    font-size: .875em;
+    color: #dc3545;
+}
+
+/******** NAVBAR *****/
+.bg-dark .navbar-brand img {
+    height: 50px;
+}
+
+.navbar-brand {
+    margin-right: 5rem;
+    padding: 0;
+}
+
+.navbar-expand-lg .nav-item {
+    padding: 0 .6rem;
+}
+
+    .navbar-expand-lg .nav-item > a:hover,
+    .navbar-expand-lg .navbar-nav > .nav-item > a:hover {
+        color: #fff;
+    }
+
+    .uppercase,
+    .navbar-expand-lg .navbar-nav > .nav-item > a,
+    .navbar-expand-lg .nav-item > a {
+        text-transform: uppercase;
+    }
+
+    .navbar-expand-lg .navbar-nav > .nav-item > a,
+    .navbar-expand-lg .nav-item > a {
+        color: #ccc;
+        text-decoration: none;
+        letter-spacing: 1px;
+        padding: 0;
+    }
+
+.dropdown-header {
+    color: #ccc;
+}
+
+.navbar .dropdown-menu {
+    width: 250px;
+    background-color: #343a40;
+}
+
+    .navbar .dropdown-menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        margin-left: 1em;
+    }
+
+    .navbar .dropdown-menu li button {
+        border: none;
+        background: none;
+        font-size: 14px;
+        margin-left: 1rem;
+        padding: 0;
+        color: #fff;
+    }
+
+    .navbar .dropdown-menu li:hover {
+        background-color: #777;
+    }
+/******************/
+.table-client tbody,
+.table-user tbody {
+    font-size: 12px;
+}
+/**Пагинация *********************/
+.pagination {
+    justify-content: center;
+}
+
+    .pagination li {
+        padding: .3em .7em;
+        border: 1px solid #145d8e;
+    }
+
+        .pagination li a {
+            text-decoration: none;
+            color: #145d8e;
+        }
+
+    .pagination .active {
+        border: 1px solid #145d8e;
+        background-color: #145d8e;
+        color: #fff;
+    }
+
+    .pagination .PagedList-skipToPrevious {
+        border-radius: 5px 0 0 5px;
+    }
+
+    .pagination .PagedList-skipToNext {
+        border-radius: 0 5px 5px 0;
+    }
+
+/*********************************/
+.client-panel label {
+    z-index: 2;
+}
+
+.btn-checkbox {
+    min-width: 127px;
+    letter-spacing: normal;
+    font-size: 14px;
+}
+
+/*******************************/
+.card-body-info {
+    font-size: 14px;
+}
+
+/***** Контрагенты *************/
+.legal #Document {
+    max-width: 100%;
+}
+
+.legal .col-6 {
+    align-self: center;
+}
+
+.select2-container--default .select2-selection--multiple {
+    padding-top: 1.625rem;
+}
+
+.select2-container {
+    width: 100%;
+}
+/***************************/
+.employeeDetail {
+    position: absolute;
+    left: 10px;
+}
+/***************************/
+@media (max-width:960px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .table tbody {
+        font-size: .8em;
+    }
+
+    .table {
+        font-size: .8em;
+    }
+
+        .table > :not(caption) > * > * {
+            padding: 1px;
+        }
+
+    .bi {
+        font-size: 1.4em !important;
+    }
+}

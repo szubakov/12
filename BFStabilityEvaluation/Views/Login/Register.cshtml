@@ -1,0 +1,29 @@
+﻿@model BFStabilityEvaluation.Models.LoginViewModels.LoginRegisterViewModel
+@{ //ViewData["Title"] = "Вход в систему";
+                ViewData["Title"] = "Регистрация"; }
+
+<div class="row login">
+    <div class="col-12 col-md-6 offset-md-3">
+        <h2>Регистрация</h2>
+        <form action="@Url.Action("Register", "Login")" method="post" class="form-hotizontal">
+            <div class="mb-3">
+                <label asp-for="Username">Логин</label>
+                <input asp-for="Username" type="text" class="form-control"  />
+                <span asp-validation-for="Username"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Password">Пароль</label>
+                <input asp-for="Password" class="form-control"  />
+                <span asp-validation-for="Password"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PasswordRetry">Повторите пароль</label>
+                <input asp-for="PasswordRetry" class="form-control"  />
+                <span asp-validation-for="PasswordRetry"></span>
+            </div>
+            <input type="submit" value="Регистрация" class="btn btn-outline-dark form-control" />
+        </form>
+
+    </div>
+</div>
