@@ -8,16 +8,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BFStabilityEvaluation.Models
 {
-    public partial class ParameterValue
+    public  class ParameterValue
     {
         public int Npech { get; set; }
         public DateTime TimeStamp { get; set; }
         public double Value { get; set; }
         public int Period { get; set; }
-        public int IdParam { get; set; }
+
+        public int ParameterId { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
         public int IdPValue { get; set; }
 
-        public virtual Parameter IdParamNavigation { get; set; }
+        public Parameter Parameter { get; set; }
 
         [NotMapped]
         public SelectList IdParamNavigations { get; set; }

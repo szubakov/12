@@ -5,33 +5,33 @@
 }
 
 <form class="needs-validation" method="post" asp-controller="Parameter" asp-action="Edit">
-    <input asp-for="IdParam" />
+    <input asp-for="ParameterId" />
     <div class="validation" asp-validation-summary="ModelOnly"></div>
     <h2>@ViewData["Title"]</h2>
     <hr />
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Name" maxlength="30" required />
-        <label asp-for="Name"></label>
+        <label asp-for="Name">Наименование</label>
         <span asp-validation-for="Name"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Alias" maxlength="30" required />
-        <label asp-for="Alias"></label>
+        <label asp-for="Alias">Код</label>
         <span asp-validation-for="Alias"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Unit" maxlength="30" required />
-        <label asp-for="Unit"></label>
+        <label asp-for="Unit">Единицы измерения</label>
         <span asp-validation-for="Unit"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="MinValue" maxlength="30" required />
-        <label asp-for="MinValue"></label>
+        <label asp-for="MinValue">Минимальное значение</label>
         <span asp-validation-for="MinValue"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="MaxValue" maxlength="30" required />
-        <label asp-for="MaxValue"></label>
+        <label asp-for="MaxValue">Максимальное значение</label>
         <span asp-validation-for="MaxValue"></span>
     </div>
 

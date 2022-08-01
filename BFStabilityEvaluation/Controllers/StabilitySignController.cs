@@ -26,14 +26,14 @@ namespace BFStabilityEvaluation.Controllers
         }
         [HttpGet]
         public IActionResult Delete(int id) =>
-            View(_context.StabilitySigns.FirstOrDefault(x => x.IdstabPokaz == id));
+            View(_context.StabilitySigns.FirstOrDefault(x => x.StabSignId == id));
 
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
 
-            var par = _context.StabilitySigns.FirstOrDefault(x => x.IdstabPokaz == id);
+            var par = _context.StabilitySigns.FirstOrDefault(x => x.StabSignId == id);
 
 
 
@@ -53,6 +53,41 @@ namespace BFStabilityEvaluation.Controllers
 
 
             return RedirectToAction("Index", "StabilitySign");
+
+        }
+        [HttpGet]
+        public IActionResult Edit(int id) =>
+                   View(_context.StabilitySigns.FirstOrDefault(x => x.StabSignId == id));
+
+        [HttpPost]
+        public IActionResult Edit(StabilitySign model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(model);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(StabilitySign model)
+        {
+
+            _context.StabilitySigns.Add(model);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
 
         }
     }

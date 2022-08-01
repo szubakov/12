@@ -6,7 +6,7 @@
 <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
 <hr />
 <table class="table table-hover table-client text-center caption-top">
-    <caption><a class="btn btn-outline-dark" asp-controller="Product" asp-action="Create">Добавить параметр</a></caption>
+    <caption><a class="btn btn-outline-dark" asp-controller="Parameter" asp-action="Create">Добавить параметр</a></caption>
   
     <thead>
         <tr>
@@ -30,9 +30,9 @@
     <td>@item.MinValue</td>
     <td>@item.MaxValue</td>
     <td>
-        <a asp-controller="Parameter" asp-action="Edit" asp-route-id="@item.IdParam" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
+        <a asp-controller="Parameter" asp-action="Edit" asp-route-id="@item.ParameterId" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
         |
-        <a asp-controller="Parameter" asp-action="Delete" asp-route-id="@item.IdParam" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
+        <a asp-controller="Parameter" asp-action="Delete" asp-route-id="@item.ParameterId" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
     </td>
 
 

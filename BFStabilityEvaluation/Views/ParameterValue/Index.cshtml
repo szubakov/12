@@ -7,8 +7,8 @@
 <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
 <hr />
 <table class="table table-hover table-client text-center caption-top">
-    <caption><a class="btn btn-outline-dark" asp-controller="Product" asp-action="Create">Добавить значение</a></caption>
-
+    <caption><a class="btn btn-outline-dark" asp-controller="ParameterValue" asp-action="Create">Добавить значение</a></caption>
+    <caption><a class="btn btn-outline-dark" asp-controller="RandomGenerator" asp-action="Create">Сгенерировать</a></caption>
     <thead>
         <tr>
 
@@ -23,21 +23,21 @@
     <tbody>
         @foreach (var item in Model)
         {
-<tr>
+            <tr>
 
-    <td>@item.IdParamNavigation?.Name</td>
-    <td>@item.Npech</td>
-    <td>@item.TimeStamp</td>
-    <td>@item.Value</td>
-    <td>@item.Period</td>
-    <td>
-        <a asp-controller="ParameterValue" asp-action="Edit" asp-route-id="@item.IdPValue" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
-        |
-        <a asp-controller="ParameterValue" asp-action="Delete" asp-route-id="@item.IdPValue" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
-    </td>
+                <td>@item.Parameter?.Name</td>
+                <td>@item.Npech</td>
+                <td>@item.TimeStamp</td>
+                <td>@item.Value</td>
+                <td>@item.Period</td>
+                <td>
+                    <a asp-controller="ParameterValue" asp-action="Edit" asp-route-id="@item.IdPValue" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
+                    |
+                    <a asp-controller="ParameterValue" asp-action="Delete" asp-route-id="@item.IdPValue" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
+                </td>
 
 
-</tr>
-}
+            </tr>
+        }
     </tbody>
 </table>

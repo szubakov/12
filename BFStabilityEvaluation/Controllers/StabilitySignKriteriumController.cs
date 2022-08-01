@@ -1,5 +1,6 @@
 ﻿using BFStabilityEvaluation.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,9 @@ namespace BFStabilityEvaluation.Controllers
         public async Task<IActionResult> Index()
         {
             var param = await _context.StabilitySignKriteria
-                .Include(p => p.IdParamNavigation)
+                .Include(p => p.Parameter)
+                .Include(p => p.IdstabPokazNavigation)
                 .ToListAsync();
-
-            var krit = await _context.StabilitySignKriteria
-                 .Include(p => p.IdstabPokazNavigation)
-                 .ToListAsync();
-            
 
             return View(param);
         }
@@ -60,5 +57,56 @@ namespace BFStabilityEvaluation.Controllers
             return RedirectToAction("Index", "StabilitySignKriterium");
 
         }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var model = _context.StabilitySignKriteria.FirstOrDefault(x => x.Id == id);
+            SetSelectLists(ref model);
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Edit(StabilitySignKriterium model)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Update(model);
+                _context.SaveChanges();
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            StabilitySignKriterium model = new();
+            SetSelectLists(ref model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Create(StabilitySignKriterium model)
+        {
+
+            _context.StabilitySignKriteria.Add(model);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
+
+        }
+
+        private void SetSelectLists(ref StabilitySignKriterium model)
+        {
+            model.IdParamNavigations = new SelectList(
+                 _context.Parameters.ToList(), "ParameterId", "Name", model.ParameterId);
+
+            model.IdstabPokazNavigations = new SelectList(
+                 _context.StabilitySigns.ToList(), "StabSignId", "Name", model.StabSignId);
+        }
+      
     }
 }

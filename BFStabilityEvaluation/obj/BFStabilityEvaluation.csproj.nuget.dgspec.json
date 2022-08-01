@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj": {}
+    "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj": {}
   },
   "projects": {
-    "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj": {
+    "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
+        "projectUniqueName": "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
         "projectName": "BFStabilityEvaluation",
-        "projectPath": "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
+        "projectPath": "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
         "packagesPath": "C:\\Users\\semzu\\.nuget\\packages\\",
-        "outputPath": "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\obj\\",
+        "outputPath": "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\semzu\\AppData\\Roaming\\NuGet\\NuGet.Config",

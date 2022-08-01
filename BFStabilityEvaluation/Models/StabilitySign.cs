@@ -1,23 +1,29 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace BFStabilityEvaluation.Models
 {
-    public partial class StabilitySign
+    public  class StabilitySign
     {
-        public StabilitySign()
-        {
-            StabilitySignKriteria = new HashSet<StabilitySignKriterium>();
-        }
+       
 
-        public int IdstabPokaz { get; set; }
+        [HiddenInput(DisplayValue = false)]
+        [Key]
+        public int StabSignId { get; set; }
+
+        [StringLength(255)]
         public string Name { get; set; }
+
+        [StringLength(255)]
         public string Alias { get; set; }
+
         public double LimitWarning { get; set; }
         public double LimitDanger { get; set; }
 
-        public virtual ICollection<StabilitySignKriterium> StabilitySignKriteria { get; set; }
+        public  ICollection<StabilitySignKriterium> StabilitySignKriteria { get; set; }
     }
 }

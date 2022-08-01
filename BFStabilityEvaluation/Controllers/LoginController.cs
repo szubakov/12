@@ -63,7 +63,7 @@ namespace BFStabilityEvaluation.Controllers
             {
                 Username = model.Username,
                 Password = model.Password,
-                Role = (byte)UserRole.User
+                Role = UserRole.User
             };
             _context.Users.Add(user);
             _context.SaveChanges();

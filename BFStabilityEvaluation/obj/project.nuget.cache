@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+lZHepDoRWuxDb1grVB998PcqGlPpckXzXopctwFTY855ppb+wYpkewUGNR5MUKd4TyQInPM8s0a/hFD+708FQ==",
+  "dgSpecHash": "Ef89IDCcQEEjPPVMB/ARO/azWaAMe2E0ZPQi5X2SUoS5sGFkEWCnwPdoMZ/eT1UC+WMwXzzgYwg/GLGhCskbfw==",
   "success": true,
-  "projectFilePath": "C:\\Praktika\\BFStabilityEvaluation\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
+  "projectFilePath": "C:\\Users\\semzu\\OneDrive\\Desktop\\NEWOLD\\BFStabilityEvaluation\\BFStabilityEvaluation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\semzu\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\semzu\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

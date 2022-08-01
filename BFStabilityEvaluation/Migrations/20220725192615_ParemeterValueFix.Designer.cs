@@ -10,90 +10,84 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BFStabilityEvaluation.Migrations
 {
     [DbContext(typeof(PraktiContext))]
-    [Migration("20220720060708_ParameterAliasString")]
-    partial class ParameterAliasString
+    [Migration("20220725192615_ParemeterValueFix")]
+    partial class ParemeterValueFix
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:Collation", "Cyrillic_General_CI_AS")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.Parameter", b =>
                 {
-                    b.Property<int>("IdParam")
+                    b.Property<int>("ParameterId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID_param")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Alias")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
 
                     b.Property<double>("MaxValue")
                         .HasColumnType("float");
 
                     b.Property<double>("MinValue")
-                        .HasColumnType("float")
-                        .HasColumnName("MinValue_");
+                        .HasColumnType("float");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(30)")
-                        .HasColumnName("Unit_");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
-                    b.HasKey("IdParam")
-                        .HasName("PK__Paramete__FD2AA0F98CC29996");
+                    b.HasKey("ParameterId");
 
-                    b.ToTable("Parameter");
+                    b.ToTable("Parameters");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.ParameterValue", b =>
                 {
                     b.Property<int>("Npech")
-                        .HasColumnType("int")
-                        .HasColumnName("NPech_");
+                        .HasColumnType("int");
 
                     b.Property<int>("ParameterId")
-                        .HasColumnType("int")
-                        .HasColumnName("ID_param");
+                        .HasColumnType("int");
 
                     b.Property<int>("Period")
                         .HasColumnType("int");
 
+                    b.Property<int>("IdPValue")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("TimeStamp")
-                        .HasColumnType("date");
+                        .HasColumnType("datetime2");
 
                     b.Property<double>("Value")
                         .HasColumnType("float");
 
+                    b.HasKey("Npech", "ParameterId", "Period");
+
                     b.HasIndex("ParameterId");
 
-                    b.ToTable("ParameterValue");
+                    b.ToTable("ParameterValues");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.StabilitySign", b =>
                 {
-                    b.Property<int>("IdstabPokaz")
+                    b.Property<int>("StabSignId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("IDstabPokaz");
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Alias")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(1)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<double>("LimitDanger")
                         .HasColumnType("float");
@@ -102,22 +96,20 @@ namespace BFStabilityEvaluation.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(1)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("IdstabPokaz")
-                        .HasName("PK__Stabilit__1EEBF21482C3EADF");
+                    b.HasKey("StabSignId");
 
-                    b.ToTable("StabilitySign");
+                    b.ToTable("StabilitySigns");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.StabilitySignKriterium", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
-                        .HasColumnName("ID");
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<double>("AcceptableDelta")
                         .HasColumnType("float");
@@ -125,103 +117,93 @@ namespace BFStabilityEvaluation.Migrations
                     b.Property<double>("ActionType")
                         .HasColumnType("float");
 
-                    b.Property<int>("IdParam")
-                        .HasColumnType("int")
-                        .HasColumnName("ID_param");
-
-                    b.Property<int>("IdstabPokaz")
-                        .HasColumnType("int")
-                        .HasColumnName("IDstabPokaz");
+                    b.Property<int?>("IdstabPokazNavigationStabSignId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(1)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("Npech")
-                        .HasColumnType("int")
-                        .HasColumnName("NPech_");
+                        .HasColumnType("int");
+
+                    b.Property<int>("ParameterId")
+                        .HasColumnType("int");
 
                     b.Property<double>("Rang")
-                        .HasColumnType("float")
-                        .HasColumnName("Rang_");
+                        .HasColumnType("float");
+
+                    b.Property<int>("StabSignId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Unit")
-                        .IsRequired()
-                        .HasMaxLength(1)
-                        .IsUnicode(false)
-                        .HasColumnType("varchar(1)")
-                        .HasColumnName("Unit_");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdParam");
+                    b.HasIndex("IdstabPokazNavigationStabSignId");
 
-                    b.HasIndex("IdstabPokaz");
+                    b.HasIndex("ParameterId");
 
-                    b.ToTable("_StabilitySignKriteria");
+                    b.ToTable("StabilitySignKriteria");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.User", b =>
                 {
-                    b.Property<byte>("CodeUser")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("tinyint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Password")
-                        .HasMaxLength(32)
-                        .IsUnicode(false)
-                        .HasColumnType("char(32)")
-                        .IsFixedLength(true);
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.Property<byte?>("Role")
-                        .HasColumnType("tinyint");
+                    b.Property<int?>("Role")
+                        .HasColumnType("int");
 
                     b.Property<string>("Username")
-                        .HasMaxLength(50)
-                        .IsUnicode(false)
-                        .HasColumnType("char(50)")
-                        .IsFixedLength(true);
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
-                    b.HasKey("CodeUser");
+                    b.HasKey("UserId");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.ParameterValue", b =>
                 {
-                    b.HasOne("BFStabilityEvaluation.Models.Parameter", "Patameter")
-                        .WithMany()
+                    b.HasOne("BFStabilityEvaluation.Models.Parameter", "Parameter")
+                        .WithMany("ParameterValues")
                         .HasForeignKey("ParameterId")
-                        .HasConstraintName("FK__Parameter__ID_pa__1273C1CD")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Patameter");
+                    b.Navigation("Parameter");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.StabilitySignKriterium", b =>
                 {
-                    b.HasOne("BFStabilityEvaluation.Models.Parameter", "IdParamNavigation")
-                        .WithMany("StabilitySignKriteria")
-                        .HasForeignKey("IdParam")
-                        .HasConstraintName("FK___Stabilit__ID_pa__182C9B23")
-                        .IsRequired();
-
                     b.HasOne("BFStabilityEvaluation.Models.StabilitySign", "IdstabPokazNavigation")
                         .WithMany("StabilitySignKriteria")
-                        .HasForeignKey("IdstabPokaz")
-                        .HasConstraintName("FK___Stabilit__IDsta__173876EA")
+                        .HasForeignKey("IdstabPokazNavigationStabSignId");
+
+                    b.HasOne("BFStabilityEvaluation.Models.Parameter", "Parameter")
+                        .WithMany("StabilitySignKriteria")
+                        .HasForeignKey("ParameterId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("IdParamNavigation");
-
                     b.Navigation("IdstabPokazNavigation");
+
+                    b.Navigation("Parameter");
                 });
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.Parameter", b =>
                 {
+                    b.Navigation("ParameterValues");
+
                     b.Navigation("StabilitySignKriteria");
                 });
 

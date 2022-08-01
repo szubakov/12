@@ -11,34 +11,34 @@
     <hr />
 
     <div class="form-floating mt-3">
-            <select asp-for="IdParam" class="form-control" data-live-search="true">
+            <select asp-for="ParameterId" class="form-control" data-live-search="true">
                 @foreach (var item in Model.IdParamNavigations)
                 {
                 <option value="@item.Value" selected="@item.Selected">@item.Text</option>
                 }
             </select>
-            <label asp-for="IdParam"></label>
+            <label asp-for="ParameterId">Наименование</label>
         </div>
 
 
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Npech" maxlength="30" required />
-        <label asp-for="Npech"></label>
+        <label asp-for="Npech">Номер печи</label>
         <span asp-validation-for="Npech"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="TimeStamp" maxlength="30" required />
-        <label asp-for="TimeStamp"></label>
+        <label asp-for="TimeStamp">Метка времени</label>
         <span asp-validation-for="TimeStamp"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Value" maxlength="30" required />
-        <label asp-for="Value"></label>
+        <label asp-for="Value">Значение</label>
         <span asp-validation-for="Value"></span>
     </div>
     <div class="form-floating mt-3">
         <input class="form-control" type="text" asp-for="Period" maxlength="30" required />
-        <label asp-for="Period"></label>
+        <label asp-for="Period">Период</label>
         <span asp-validation-for="Period"></span>
     </div>
 

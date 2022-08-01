@@ -1,26 +1,33 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 #nullable disable
 
 namespace BFStabilityEvaluation.Models
 {
-    public partial class Parameter
+    public  class Parameter
     {
-        public Parameter()
-        {
-            ParameterValues = new HashSet<ParameterValue>();
-            StabilitySignKriteria = new HashSet<StabilitySignKriterium>();
-        }
+        [HiddenInput(DisplayValue = false)]
+        [Key]
+        public int ParameterId { get; set; }
 
-        public int IdParam { get; set; }
+        [StringLength(255)]
         public string Name { get; set; }
+
+        [StringLength(64)]
         public string Alias { get; set; }
+
+        [StringLength(128)]
         public string Unit { get; set; }
+
         public double MinValue { get; set; }
+
         public double MaxValue { get; set; }
 
-        public virtual ICollection<ParameterValue> ParameterValues { get; set; }
-        public virtual ICollection<StabilitySignKriterium> StabilitySignKriteria { get; set; }
+        public  ICollection<ParameterValue> ParameterValues { get; set; }
+
+        public  ICollection<StabilitySignKriterium> StabilitySignKriteria { get; set; }
     }
 }

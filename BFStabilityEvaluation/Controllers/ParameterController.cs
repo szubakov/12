@@ -26,14 +26,14 @@ namespace BFStabilityEvaluation.Controllers
 
         [HttpGet]
         public IActionResult Delete(int id) =>
-            View(_context.Parameters.FirstOrDefault(x => x.IdParam == id));
+            View(_context.Parameters.FirstOrDefault(x => x.ParameterId == id));
 
   
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
            
-            var par = _context.Parameters.FirstOrDefault(x => x.IdParam == id);
+            var par = _context.Parameters.FirstOrDefault(x => x.ParameterId == id);
            
             
 
@@ -57,7 +57,7 @@ namespace BFStabilityEvaluation.Controllers
         }
         [HttpGet]
         public IActionResult Edit(int id) =>
-                   View(_context.Parameters.FirstOrDefault(x => x.IdParam == id));
+                   View(_context.Parameters.FirstOrDefault(x => x.ParameterId == id));
 
         [HttpPost]
         public IActionResult Edit(Parameter model)
@@ -72,8 +72,26 @@ namespace BFStabilityEvaluation.Controllers
 
             return View(model);
         }
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult Create(Parameter model)
+        {
+           
+                _context.Parameters.Add(model);
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            
+
+          
+        }
     }
+
 
 
 }

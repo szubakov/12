@@ -20,7 +20,7 @@ namespace BFStabilityEvaluation.Controllers
         public async Task<IActionResult> Index()
         {
             var param = await _context.ParameterValues
-                .Include(p => p.IdParamNavigation)
+                .Include(p => p.Parameter)
                 .ToListAsync();
 
             return View(param);
@@ -58,9 +58,12 @@ namespace BFStabilityEvaluation.Controllers
 
         }
         [HttpGet]
-        public IActionResult Edit(int id) =>
-                  View(_context.ParameterValues.FirstOrDefault(x => x.IdPValue == id));
-
+        public IActionResult Edit(int id)
+        { 
+             var model = _context.ParameterValues.FirstOrDefault(x => x.IdPValue == id);
+            SetSelectLists(ref model);
+            return View(model);
+        }
         [HttpPost]
         public IActionResult Edit(ParameterValue model)
         {
@@ -74,12 +77,33 @@ namespace BFStabilityEvaluation.Controllers
 
             return View(model);
         }
+        
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            ParameterValue model = new();
+            SetSelectLists(ref model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Create(ParameterValue model)
+        {
+
+            _context.ParameterValues.Add(model);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
+
+        }
         private void SetSelectLists(ref ParameterValue model)
         {
             model.IdParamNavigations = new SelectList(
-                    Parameters<List<Parameter>>(
-                        _context.ParameterValues.Where(x => x.IdPValue ==)).ToList()), "IDpara", "Name", model.IdParam);
-           
+                 _context.Parameters.ToList(), "ParameterId", "Name", model.ParameterId);
+
         }
     }
 }
