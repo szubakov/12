@@ -21,10 +21,10 @@ namespace BFStabilityEvaluation.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ParameterValue>().HasKey(u => new { u.Npech, u.ParameterId, u.Period });
+            //modelBuilder.Entity<ParameterValue>().HasKey(u => new { u.Npech, u.ParameterId, u.Period });
             modelBuilder.Entity<Parameter>().HasData(
 
-                new Parameter { ParameterId = 1, Name = "Удельная производительность", Alias = "SpecPerformance", Unit = "т/м3", MinValue = 0, MaxValue = 0 },
+                new Parameter { ParameterId = 1, Name = "Удельная производительность", Alias = "SpecPerformance", Unit = "т/м3", MinValue = 2.13, MaxValue = 2.6 },
                 new Parameter { ParameterId = 2, Name = "Удельный расход кокса", Alias = "Spec Сonsumption coke", Unit = "кг/т чугуна", MinValue = 0, MaxValue = 0 },
                 new Parameter { ParameterId = 3, Name = "Текущие простои", Alias = "Current downtime", Unit = "%", MinValue = 0, MaxValue = 0 },
                 new Parameter { ParameterId = 4, Name = "Тихий ход", Alias = "Quiet running", Unit = "%", MinValue = 0, MaxValue = 0 },
@@ -140,9 +140,9 @@ namespace BFStabilityEvaluation.Models
             );
         }
 
-        internal void Save()
-        {
-            throw new NotImplementedException();
-        }
+        //internal void Save()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

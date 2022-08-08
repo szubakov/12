@@ -476,6 +476,11 @@ namespace BFStabilityEvaluation.Migrations
 
             modelBuilder.Entity("BFStabilityEvaluation.Models.ParameterValue", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("Npech")
                         .HasColumnType("int");
 
@@ -485,16 +490,16 @@ namespace BFStabilityEvaluation.Migrations
                     b.Property<int>("Period")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdPValue")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("TimeStampEnd")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("TimeStamp")
+                    b.Property<DateTime>("TimeStampStart")
                         .HasColumnType("datetime2");
 
                     b.Property<double>("Value")
                         .HasColumnType("float");
 
-                    b.HasKey("Npech", "ParameterId", "Period");
+                    b.HasKey("Id");
 
                     b.HasIndex("ParameterId");
 

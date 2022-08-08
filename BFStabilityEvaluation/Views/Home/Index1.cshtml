@@ -1,0 +1,58 @@
+﻿@model HomeViewModel;
+
+
+@{ ViewData["Title"] = "ТЭПП";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+
+<head>
+    <meta charset="utf-8" />
+
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/MYCSS.css" />
+
+
+</head>
+
+<div class="container">
+    <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
+
+    <table class="table table-hover table-client text-center caption-top">
+       
+
+        <thead>
+            <tr>
+
+              
+                <th>Параметр</th>
+                <th>Ед</th>
+                <th>Ранг</th>
+                <th>Возможное отклонение</th>
+                <th>Отклонение факт</th>
+                <th>Значение</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (StabilitySignKriterium item in Model.StabilitySignKriteriums)
+            {
+                <tr>
+
+
+                    <td>@item.Parameter?.Name</td>
+                    <td>@item.Unit</td>
+                    <td>@item.Rang</td>
+                    <td>@item.AcceptableDelta</td>
+                    <td>@item.ActionType</td>
+                
+                </tr>
+
+            }
+
+
+           
+        </tbody>
+    </table>
+</div>

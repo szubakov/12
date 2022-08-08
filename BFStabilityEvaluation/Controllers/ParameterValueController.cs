@@ -28,14 +28,14 @@ namespace BFStabilityEvaluation.Controllers
 
         [HttpGet]
         public IActionResult Delete(int id) =>
-            View(_context.ParameterValues.FirstOrDefault(x => x.IdPValue == id));
+            View(_context.ParameterValues.FirstOrDefault(x => x.Id == id));
 
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
 
-            var par = _context.ParameterValues.FirstOrDefault(x => x.IdPValue == id);
+            var par = _context.ParameterValues.FirstOrDefault(x => x.Id == id);
 
 
 
@@ -60,7 +60,7 @@ namespace BFStabilityEvaluation.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         { 
-             var model = _context.ParameterValues.FirstOrDefault(x => x.IdPValue == id);
+             var model = _context.ParameterValues.FirstOrDefault(x => x.Id == id);
             SetSelectLists(ref model);
             return View(model);
         }

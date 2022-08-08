@@ -18,7 +18,7 @@ namespace BFStabilityEvaluation.Models
         public int? Npech { get; set; }
 
         [StringLength(255)]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [StringLength(128)]
         public string Unit { get; set; }

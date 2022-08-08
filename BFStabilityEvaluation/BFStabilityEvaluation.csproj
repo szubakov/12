@@ -180,7 +180,6 @@
     <None Include="wwwroot\lib\moment\moment-with-locales.min.js.map" />
     <None Include="wwwroot\lib\moment\moment.min.js" />
     <None Include="wwwroot\lib\moment\moment.min.js.map" />
-    <None Include="wwwroot\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
     <None Include="wwwroot\wwwroot\Docs\BusinessOffer.docx" />
     <None Include="wwwroot\wwwroot\images\Logo.min.svg" />
     <None Include="wwwroot\wwwroot\js\site.js" />
@@ -363,6 +362,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
