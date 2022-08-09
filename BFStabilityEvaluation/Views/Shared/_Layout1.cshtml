@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model HomeViewModel;
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -60,7 +62,14 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-4">
+
                 <nav id="menuVertical">
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 135px; height:40px" readonly />
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 270px; height:40px" readonly />
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 405px; height:40px" readonly />
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 560px; height:40px" readonly />
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 695px; height:40px" readonly />
+                    <input class="form-control" type="text" style="width:70px; position:fixed; left:215px; top: 820px; height:40px" readonly />
                     <ul>
                         <li><a asp-controller="Home" asp-action="Index1"><div class="img_n"></div><span>Технико-экономический показатели плавки</span></a></li>
 

@@ -26,45 +26,80 @@ namespace BFStabilityEvaluation.Controllers
             return View();
         }
 
-        [HttpGet]
+     
+       
         public IActionResult Index1()
         {
 
             List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
-                .Select(c => new StabilitySignKriterium { Id = c.Id, Name = c.Name })
+                .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+
                 .ToList();
 
-            List<ParameterValue> ParMS = _context.ParameterValues
-                .Select(c => new ParameterValue { Id = c.Id, Value = c.Value })
-                .ToList();
 
-            HomeViewModel ivm = new HomeViewModel { StabilitySignKriteriums = compModels, ParameterValues = ParMS };
+
+
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+
 
 
             return View(ivm);
         }
 
 
-
         public IActionResult Index2()
         {
-            return View();
+            List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
+                .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+
+                .ToList();
+
+
+
+
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+
+
+
+            return View(ivm);
         }
         public IActionResult Index3()
         {
-            return View();
+            List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
+                  .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                  .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+                  .ToList();
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+            return View(ivm);
         }
         public IActionResult Index4()
         {
-            return View();
+            List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
+                  .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                  .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+                  .ToList();
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+            return View(ivm);
         }
         public IActionResult Index5()
         {
-            return View();
+            List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
+                 .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                 .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+                 .ToList();
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+            return View(ivm);
         }
         public IActionResult Index6()
         {
-            return View();
+            List<StabilitySignKriterium> compModels = _context.StabilitySignKriteria
+                  .Include(d => d.Parameter).ThenInclude(d => d.ParameterValues)
+                  .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+                  .ToList();
+            HomeViewModel ivm = new() { StabilitySignKriteriums = compModels };
+            return View(ivm);
         }
 
         public IActionResult Info()

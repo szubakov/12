@@ -4,14 +4,16 @@ using BFStabilityEvaluation.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BFStabilityEvaluation.Migrations
 {
     [DbContext(typeof(PraktiContext))]
-    partial class PraktiContextModelSnapshot : ModelSnapshot
+    [Migration("20220808093555_MIG0808")]
+    partial class MIG0808
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,7 +57,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "SpecPerformance",
                             MaxValue = 2.6000000000000001,
                             MinValue = 2.1299999999999999,
-                            Name = "Удельная производительность, т/м3",
+                            Name = "Удельная производительность",
                             Unit = "т/м3"
                         },
                         new
@@ -64,7 +66,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Spec Сonsumption coke",
                             MaxValue = 550.0,
                             MinValue = 450.0,
-                            Name = "Удельный расход кокса, кг/т чугуна",
+                            Name = "Удельный расход кокса",
                             Unit = "кг/т чугуна"
                         },
                         new
@@ -73,7 +75,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Current downtime",
                             MaxValue = 1.1000000000000001,
                             MinValue = 0.90000000000000002,
-                            Name = "Текущие простои, %",
+                            Name = "Текущие простои",
                             Unit = "%"
                         },
                         new
@@ -82,7 +84,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Quiet running",
                             MaxValue = 1.6499999999999999,
                             MinValue = 1.3500000000000001,
-                            Name = "Тихий ход, %",
+                            Name = "Тихий ход",
                             Unit = "%"
                         },
                         new
@@ -91,7 +93,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "The proportion of pellets",
                             MaxValue = 38.5,
                             MinValue = 31.5,
-                            Name = "Доля окатышей в шихте, %",
+                            Name = "Доля окатышей в шихте",
                             Unit = "%"
                         },
                         new
@@ -100,7 +102,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Share of sinter",
                             MaxValue = 70.930000000000007,
                             MinValue = 58.049999999999997,
-                            Name = "Доля агломерата в шихте, %",
+                            Name = "Доля агломерата в шихте",
                             Unit = "%"
                         },
                         new
@@ -109,7 +111,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Fe content",
                             MaxValue = 62.700000000000003,
                             MinValue = 51.299999999999997,
-                            Name = "Содержание Fe в доменной шихте, %",
+                            Name = "Содержание Fe в доменной шихте",
                             Unit = "%"
                         },
                         new
@@ -145,7 +147,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Ash in coke",
                             MaxValue = 9.9000000000000004,
                             MinValue = 8.0999999999999996,
-                            Name = "Содержание золы в коксе, %",
+                            Name = "Содержание золы в коксе",
                             Unit = "%"
                         },
                         new
@@ -154,7 +156,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Moisture  in coke",
                             MaxValue = 4.9500000000000002,
                             MinValue = 4.0499999999999998,
-                            Name = "Содержание влаги в коксе, %",
+                            Name = "Содержание влаги в коксе",
                             Unit = "%"
                         },
                         new
@@ -163,7 +165,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Volatile  in coke",
                             MaxValue = 13.199999999999999,
                             MinValue = 10.800000000000001,
-                            Name = "Содержание летучих в коксе, %",
+                            Name = "Содержание летучих в коксе",
                             Unit = "%"
                         },
                         new
@@ -172,7 +174,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Coke  M25",
                             MaxValue = 94.599999999999994,
                             MinValue = 77.299999999999997,
-                            Name = "Прочность кокса по М25, %",
+                            Name = "Прочность кокса по М25",
                             Unit = "%"
                         },
                         new
@@ -181,7 +183,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Abrasion to M10",
                             MaxValue = 8.9100000000000001,
                             MinValue = 7.29,
-                            Name = "Истираемость кокса по М10, %",
+                            Name = "Истираемость кокса по М10",
                             Unit = "%"
                         },
                         new
@@ -190,7 +192,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "CSR",
                             MaxValue = 41.799999999999997,
                             MinValue = 34.200000000000003,
-                            Name = "CSR, %",
+                            Name = "CSR",
                             Unit = "%"
                         },
                         new
@@ -199,7 +201,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "CRI",
                             MaxValue = 40.700000000000003,
                             MinValue = 33.299999999999997,
-                            Name = "CRI, %",
+                            Name = "CRI",
                             Unit = "%"
                         },
                         new
@@ -208,7 +210,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Gas consumption",
                             MaxValue = 14520.0,
                             MinValue = 118800.0,
-                            Name = "Расход природного газа, м3/т чугуна",
+                            Name = "Расход природного газа",
                             Unit = "м3/т чугуна"
                         },
                         new
@@ -217,7 +219,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "HotBlastO2",
                             MaxValue = 29.699999999999999,
                             MinValue = 24.300000000000001,
-                            Name = "Содержание кислорода в дутье, %",
+                            Name = "Содержание кислорода в дутье",
                             Unit = "%"
                         },
                         new
@@ -226,7 +228,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "TempHotBlast",
                             MaxValue = 1337.5999999999999,
                             MinValue = 1094.4000000000001,
-                            Name = "Температура горячего дутья, °С",
+                            Name = "Температура горячего дутья",
                             Unit = "°С"
                         },
                         new
@@ -235,7 +237,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "TempKolGaz",
                             MaxValue = 345.39999999999998,
                             MinValue = 282.60000000000002,
-                            Name = "Средняя температура колошникового газа, °С",
+                            Name = "Средняя температура колошникового газа",
                             Unit = "°С"
                         },
                         new
@@ -244,7 +246,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Degree of CO",
                             MaxValue = 47.740000000000002,
                             MinValue = 39.060000000000002,
-                            Name = "Степень использования СО, %",
+                            Name = "Степень использования СО",
                             Unit = "%"
                         },
                         new
@@ -253,7 +255,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Degree of CO H2",
                             MaxValue = 9.9000000000000004,
                             MinValue = 8.0999999999999996,
-                            Name = "Степень использования Н2, %",
+                            Name = "Степень использования Н2",
                             Unit = "%"
                         },
                         new
@@ -262,7 +264,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Temperature peripheral",
                             MaxValue = 792.0,
                             MinValue = 648.0,
-                            Name = "Средняя температура периферийных газов, °С",
+                            Name = "Средняя температура периферийных газов",
                             Unit = "°С"
                         },
                         new
@@ -271,7 +273,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Irregularity of gas temperature",
                             MaxValue = 143.0,
                             MinValue = 117.0,
-                            Name = "Окружная неравномерность температуры газа, °С",
+                            Name = "Окружная неравномерность температуры газа",
                             Unit = "°С"
                         },
                         new
@@ -280,7 +282,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Irregularities  top gas",
                             MaxValue = 165.0,
                             MinValue = 135.0,
-                            Name = "Неравномерность T колошникового газа по газоотводам, °С",
+                            Name = "Неравномерность T колошникового газа по газоотводам",
                             Unit = "°С"
                         },
                         new
@@ -289,7 +291,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Ratio  Tcp of peripheral to Tcp of gas",
                             MaxValue = 0.33000000000000002,
                             MinValue = 0.27000000000000002,
-                            Name = "Отношение Tcр периферийных термопар к Tcр колошникового газа, ед",
+                            Name = "Отношение Tcр периферийных термопар к Tcр колошникового газа",
                             Unit = "ед"
                         },
                         new
@@ -298,7 +300,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Reftemperatures 4th row",
                             MaxValue = 330.0,
                             MinValue = 270.0,
-                            Name = "Температура холодильников 4 ряд, °С",
+                            Name = "Температура холодильников 4 ряд",
                             Unit = "°С"
                         },
                         new
@@ -307,7 +309,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Theoretical  temperature",
                             MaxValue = 1100.0,
                             MinValue = 900.0,
-                            Name = "Теоретическая температура горения, °С",
+                            Name = "Теоретическая температура горения",
                             Unit = "°С"
                         },
                         new
@@ -316,7 +318,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Si content in cast iron",
                             MaxValue = 1.1000000000000001,
                             MinValue = 0.90000000000000002,
-                            Name = "Содержание в чугуне Si, %",
+                            Name = "Содержание в чугуне Si",
                             Unit = "%"
                         },
                         new
@@ -325,7 +327,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Index of the bottom temperature ",
                             MaxValue = 0.55000000000000004,
                             MinValue = 0.45000000000000001,
-                            Name = "Индекс низа температурного поля, доли",
+                            Name = "Индекс низа температурного поля",
                             Unit = "доли"
                         },
                         new
@@ -334,7 +336,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Index of the top of the temperature ",
                             MaxValue = 0.36299999999999999,
                             MinValue = 0.29699999999999999,
-                            Name = "Индекс верха температурного поля, доли",
+                            Name = "Индекс верха температурного поля",
                             Unit = "доли"
                         },
                         new
@@ -370,7 +372,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Sulfur distribution coefficient",
                             MaxValue = 0.021999999999999999,
                             MinValue = 0.017999999999999999,
-                            Name = "Коэффициент распределения серы, доли",
+                            Name = "Коэффициент распределения серы",
                             Unit = "°доли"
                         },
                         new
@@ -379,7 +381,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Viscosity_1400",
                             MaxValue = 0.495,
                             MinValue = 0.40500000000000003,
-                            Name = "Вязкость конечного шлака при 1400 °С, Па∙с",
+                            Name = "Вязкость конечного шлака при 1400 °С",
                             Unit = "Па∙с"
                         },
                         new
@@ -388,7 +390,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Viscosity_1500",
                             MaxValue = 0.40699999999999997,
                             MinValue = 0.33300000000000002,
-                            Name = "Вязкость конечного шлака при 1500 °С, Па∙с",
+                            Name = "Вязкость конечного шлака при 1500 °С",
                             Unit = "Па∙с"
                         },
                         new
@@ -397,7 +399,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Viscosity_Tfin",
                             MaxValue = 0.253,
                             MinValue = 0.20699999999999999,
-                            Name = "Вязкость конечного шлака при T конечной, Па∙с",
+                            Name = "Вязкость конечного шлака при T конечной",
                             Unit = "Па∙с"
                         },
                         new
@@ -406,7 +408,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Viscosity gradients at 1400–1500 °C",
                             MaxValue = 0.021999999999999999,
                             MinValue = 0.017999999999999999,
-                            Name = "Градиенты вязкости шлака при 1400–1500 °С, Па∙с",
+                            Name = "Градиенты вязкости шлака при 1400–1500 °С ",
                             Unit = "Па∙с/°С"
                         },
                         new
@@ -415,7 +417,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Slag viscosity gradients at 0.7–2.5 Pa∙s",
                             MaxValue = 0.099000000000000005,
                             MinValue = 0.081000000000000003,
-                            Name = "Градиенты вязкости шлака при 0,7–2,5 Па∙с, Па∙с",
+                            Name = "Градиенты вязкости шлака при 0,7–2,5 Па∙с",
                             Unit = "Па∙с/°С"
                         },
                         new
@@ -424,7 +426,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "P drop tuyere - top",
                             MaxValue = 7.7000000000000002,
                             MinValue = 6.2999999999999998,
-                            Name = "Перепад давления «фурмы – колошник», атм",
+                            Name = "Перепад давления «фурмы – колошник»",
                             Unit = "атм"
                         },
                         new
@@ -433,7 +435,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "The degree  balancing by the gas flow",
                             MaxValue = 27.5,
                             MinValue = 22.5,
-                            Name = "Степень уравновешивания шихты газовым потоком, %",
+                            Name = "Степень уравновешивания шихты газовым потоком",
                             Unit = "%"
                         },
                         new
@@ -442,7 +444,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Cold blast consumption",
                             MaxValue = 2896.3000000000002,
                             MinValue = 2369.6999999999998,
-                            Name = "Расход холодного дутья, м3/мин»",
+                            Name = "Расход холодного дутья»",
                             Unit = "м3/мин"
                         },
                         new
@@ -451,8 +453,8 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "hot blast pressure",
                             MaxValue = 2.7829999999999999,
                             MinValue = 2.2770000000000001,
-                            Name = "Давление горячего дутья, атм/(МПа)",
-                            Unit = "атм/(МПа)"
+                            Name = "Давление горячего дутья",
+                            Unit = "ати/(МПа)"
                         },
                         new
                         {
@@ -460,7 +462,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Gas T on the periphery",
                             MaxValue = 308.0,
                             MinValue = 252.0,
-                            Name = "Температура газа по радиусу колошника на периферии», °С",
+                            Name = "Температура газа по радиусу колошника на периферии»",
                             Unit = "°С"
                         },
                         new
@@ -469,7 +471,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Gas T  on the axis",
                             MaxValue = 302.5,
                             MinValue = 247.5,
-                            Name = "Температура газа по радиусу колошника на оси, °С",
+                            Name = "Температура газа по радиусу колошника на оси",
                             Unit = "°С"
                         });
                 });
