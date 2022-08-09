@@ -1,17 +1,108 @@
-﻿@{
-    ViewData["Title"] = "Главная";
-    Layout = "~/Views/Shared/_Layout1.cshtml";
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Стабильность работы доменной печи";
 }
 
-<head>
-    <meta charset="utf-8" />
-   
+<div class="container">
+    <div class="row">
+        <div class="col-4">
 
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/MYCSS.css" />
-</head>
+            @*@foreach (var item in Model.Where(d => d.StabSignId == 1))
+            {
+            var parameterValues = item.Parameter.ParameterValues.Where(d => d.Period == AsuPeriod.Day);
+            int count = parameterValues?.Count() ?? 0;
+            double average = (double)(parameterValues.Sum(d => d.Value) / count);
+            double deviation = 0;
 
-<body>
+            foreach (var x in parameterValues)
+            {
+            deviation += Math.Pow(x.Value - average, 2);
+            }
+            double total = deviation / (count - 1);
 
-    
-</body>
+            int Pi = 0;
+
+            var deltaAc = item.AcceptableDelta;
+            var rang = item.Rang;
+            double Sumrang = 0;
+            double Bi = 0;
+
+            foreach (var x in Model)
+            {
+            Sumrang += Math.Pow(x.Rang, 2);
+            }
+
+
+            if (deltaAc < total)
+            {
+            Pi = 1;
+
+            }
+
+            foreach (var x in Model)
+            {
+            Bi += (Pi * rang) / Sumrang;
+            }
+            }*@
+
+            <ul class="list-group">
+                @foreach (var sign in Model.StabilitySigns)
+                {
+                    <li class="list-group-item">
+                        <a href="@Url.Action("Index", "Home", new { id = sign.StabSignId })">
+                            <div class="img_n"></div><span>@sign.Name</span> 
+                        </a> - ЗНАЧЕНИЕ
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-8">
+            <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
+            <table class="table table-hover table-client text-center caption-top">
+                <thead>
+                    <tr>
+                        <th>Параметр</th>
+
+                        <th>Ранг</th>
+                        <th>Возможное отклонение</th>
+                        <th>Отклонение факт</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (StabilitySignKriterium item in Model.StabilitySignKriteriums.Where(d => d.StabSignId == Model.CurrentSignId))
+                    {
+                        <tr>
+                            <td class="text-left">@item.Parameter?.Name</td>
+
+                            <td>@item.Rang</td>
+                            <td>@item.AcceptableDelta</td>
+
+                            <td>
+                                @{
+                                    var parameterValues = item.Parameter.ParameterValues.Where(d => d.Period == AsuPeriod.Day);
+                                    int count = parameterValues?.Count() ?? 0;
+                                    double average = (double)(parameterValues.Sum(d => d.Value) / count);
+                                    double deviation = 0;
+
+                                    foreach (var x in parameterValues)
+                                    {
+                                        deviation += Math.Pow(x.Value - average, 2);
+                                    }
+                                    double total = deviation / (count - 1);
+                                }
+
+                                <p>@total</p>
+                            </td>
+                            <td>
+                                <p>@average</p>
+
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

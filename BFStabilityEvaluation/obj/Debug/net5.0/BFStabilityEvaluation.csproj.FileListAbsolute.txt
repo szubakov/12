@@ -454,10 +454,3 @@ C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\BFStabi
 C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\ref\BFStabilityEvaluation.dll
 C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\BFStabilityEvaluation.pdb
 C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\BFStabilityEvaluation.genruntimeconfig.cache
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Shared\_Layout1.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index1.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index2.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index3.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index4.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index5.cshtml.g.cs
-C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\obj\Debug\net5.0\Razor\Views\Home\Index6.cshtml.g.cs

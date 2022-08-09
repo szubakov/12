@@ -76,12 +76,12 @@ namespace BFStabilityEvaluation.Models
 
             modelBuilder.Entity<StabilitySign>().HasData(
 
-                 new StabilitySign { StabSignId = 1, Name = "Технико-экономический показатели плавки", Alias = "TEIM", LimitWarning = 0, LimitDanger = 0 },
-                 new StabilitySign { StabSignId = 2, Name = "Свойства сырья (железорудных материалов, кокса).", Alias = "Properties of raw materials", LimitWarning = 0, LimitDanger = 0 },
-                 new StabilitySign { StabSignId = 3, Name = "Показатель дутьевого и газодинамического режима", Alias = "IBGDM", LimitWarning = 0, LimitDanger = 0 },
-                 new StabilitySign { StabSignId = 4, Name = "Показатель теплового режима", Alias = "Indicator of the thermal regime", LimitWarning = 0, LimitDanger = 0 },
-                 new StabilitySign { StabSignId = 5, Name = "Показатель шлакового режима", Alias = "Indicator of the slag regime", LimitWarning = 0, LimitDanger = 0 },
-                 new StabilitySign { StabSignId = 6, Name = "Интегральный показатель стабильности работы печи ", Alias = "IISF", LimitWarning = 0, LimitDanger = 0 }
+                 new StabilitySign { StabSignId = 1, Name = "Технико-экономические показатели плавки", Alias = "TEIM", LimitWarning = 0, LimitDanger = 0 },
+                 new StabilitySign { StabSignId = 2, Name = "Свойства сырья", Alias = "Properties of raw materials", LimitWarning = 0, LimitDanger = 0 },
+                 new StabilitySign { StabSignId = 3, Name = "Дутьевой и газодинамический режим", Alias = "IBGDM", LimitWarning = 0, LimitDanger = 0 },
+                 new StabilitySign { StabSignId = 4, Name = "Тепловой режим", Alias = "Indicator of the thermal regime", LimitWarning = 0, LimitDanger = 0 },
+                 new StabilitySign { StabSignId = 5, Name = "Шлаковый режима", Alias = "Indicator of the slag regime", LimitWarning = 0, LimitDanger = 0 },
+                 new StabilitySign { StabSignId = 6, Name = "Интегральный показатель", Alias = "IISF", LimitWarning = 0, LimitDanger = 0 }
 
                 );
 

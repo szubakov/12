@@ -9,7 +9,12 @@ namespace BFStabilityEvaluation.Models
 {
     public class HomeViewModel
     {
+        public List<StabilitySign> StabilitySigns { get; set; }
+
+        public int CurrentSignId { get; set; }
+
         public IEnumerable<ParameterValue> ParameterValues { get; set; }
+
         public IEnumerable<StabilitySignKriterium> StabilitySignKriteriums { get; set; }
 
     }
