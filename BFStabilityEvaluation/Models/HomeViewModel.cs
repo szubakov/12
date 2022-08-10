@@ -13,9 +13,9 @@ namespace BFStabilityEvaluation.Models
 
         public int CurrentSignId { get; set; }
 
-        public IEnumerable<ParameterValue> ParameterValues { get; set; }
+        //public IEnumerable<ParameterValue> ParameterValues { get; set; }
 
-        public IEnumerable<StabilitySignKriterium> StabilitySignKriteriums { get; set; }
+        public List<StabilitySignKriterium> StabilitySignKriteriums { get; set; }
 
     }
 }

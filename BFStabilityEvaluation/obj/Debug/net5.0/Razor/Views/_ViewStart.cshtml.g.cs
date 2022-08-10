@@ -21,20 +21,27 @@ using BFStabilityEvaluation;
 #nullable disable
 #nullable restore
 #line 2 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
-using BFStabilityEvaluation.Models;
+using BFStabilityEvaluation.Extension;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
+using BFStabilityEvaluation.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
 using BFStabilityEvaluation.Models.Enums;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7b1cc307d5f31bc6fed746737ef7960796ef5a6d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"40a510c2e8e6577c4100991e016f7411053b9ab4", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

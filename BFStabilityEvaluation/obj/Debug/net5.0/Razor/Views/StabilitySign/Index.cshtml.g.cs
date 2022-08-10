@@ -21,20 +21,27 @@ using BFStabilityEvaluation;
 #nullable disable
 #nullable restore
 #line 2 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
-using BFStabilityEvaluation.Models;
+using BFStabilityEvaluation.Extension;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 3 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
+using BFStabilityEvaluation.Models;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Praktika\BFStabilityEvaluation\BFStabilityEvaluation\Views\_ViewImports.cshtml"
 using BFStabilityEvaluation.Models.Enums;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"734d898e8c21085b530b2e68e091ec7d2e0b161e", @"/Views/StabilitySign/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7b1cc307d5f31bc6fed746737ef7960796ef5a6d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"40a510c2e8e6577c4100991e016f7411053b9ab4", @"/Views/_ViewImports.cshtml")]
     public class Views_StabilitySign_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<List<BFStabilityEvaluation.Models.StabilitySign>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("btn btn-outline-dark"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,7 +92,7 @@ using BFStabilityEvaluation.Models.Enums;
 #line hidden
 #nullable disable
             WriteLiteral("</h2>\r\n    \r\n    <table class=\"table table-hover table-client text-center caption-top\">\r\n        <caption>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e6715", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e6917", async() => {
                 WriteLiteral("Добавить параметр");
             }
             );
@@ -158,7 +165,7 @@ using BFStabilityEvaluation.Models.Enums;
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n                    <td>\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e9892", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e10094", async() => {
                 WriteLiteral("<span class=\"bi bi-pencil fs-5\"></span>");
             }
             );
@@ -193,7 +200,7 @@ using BFStabilityEvaluation.Models.Enums;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                        |\r\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e12557", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "734d898e8c21085b530b2e68e091ec7d2e0b161e12760", async() => {
                 WriteLiteral("<span class=\"bi bi-trash fs-5\"></span>");
             }
             );

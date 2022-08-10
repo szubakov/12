@@ -7,52 +7,13 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-
-            @*@foreach (var item in Model.Where(d => d.StabSignId == 1))
-            {
-            var parameterValues = item.Parameter.ParameterValues.Where(d => d.Period == AsuPeriod.Day);
-            int count = parameterValues?.Count() ?? 0;
-            double average = (double)(parameterValues.Sum(d => d.Value) / count);
-            double deviation = 0;
-
-            foreach (var x in parameterValues)
-            {
-            deviation += Math.Pow(x.Value - average, 2);
-            }
-            double total = deviation / (count - 1);
-
-            int Pi = 0;
-
-            var deltaAc = item.AcceptableDelta;
-            var rang = item.Rang;
-            double Sumrang = 0;
-            double Bi = 0;
-
-            foreach (var x in Model)
-            {
-            Sumrang += Math.Pow(x.Rang, 2);
-            }
-
-
-            if (deltaAc < total)
-            {
-            Pi = 1;
-
-            }
-
-            foreach (var x in Model)
-            {
-            Bi += (Pi * rang) / Sumrang;
-            }
-            }*@
-
             <ul class="list-group">
                 @foreach (var sign in Model.StabilitySigns)
                 {
                     <li class="list-group-item">
                         <a href="@Url.Action("Index", "Home", new { id = sign.StabSignId })">
-                            <div class="img_n"></div><span>@sign.Name</span> 
-                        </a> - ЗНАЧЕНИЕ
+                            @sign.Name
+                        </a> - @Functions.RoundSmart(StabilityCore.GetStabilityValue(sign.StabSignId, Model.StabilitySignKriteriums))
                     </li>
                 }
             </ul>
@@ -71,33 +32,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (StabilitySignKriterium item in Model.StabilitySignKriteriums.Where(d => d.StabSignId == Model.CurrentSignId))
+                    @foreach (var item in Model.StabilitySignKriteriums.Where(d => d.StabSignId == Model.CurrentSignId))
                     {
                         <tr>
                             <td class="text-left">@item.Parameter?.Name</td>
 
                             <td>@item.Rang</td>
                             <td>@item.AcceptableDelta</td>
-
                             <td>
-                                @{
-                                    var parameterValues = item.Parameter.ParameterValues.Where(d => d.Period == AsuPeriod.Day);
-                                    int count = parameterValues?.Count() ?? 0;
-                                    double average = (double)(parameterValues.Sum(d => d.Value) / count);
-                                    double deviation = 0;
-
-                                    foreach (var x in parameterValues)
-                                    {
-                                        deviation += Math.Pow(x.Value - average, 2);
-                                    }
-                                    double total = deviation / (count - 1);
-                                }
-
-                                <p>@total</p>
+                                @Functions.RoundSmart(item.Parameter.ParameterValues.Select(x => x.Value).StdDev())
                             </td>
                             <td>
-                                <p>@average</p>
-
+                                <p>@Functions.RoundSmart(item.Parameter.ParameterValues.Select(x => x.Value).Average())</p>
                             </td>
                         </tr>
                     }

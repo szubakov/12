@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BFStabilityEvaluation.Migrations
 {
     [DbContext(typeof(PraktiContext))]
-    [Migration("20220804033826_GEN")]
-    partial class GEN
+    [Migration("20220809193244_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -55,80 +55,80 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 1,
                             Alias = "SpecPerformance",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Удельная производительность",
+                            MaxValue = 2.6000000000000001,
+                            MinValue = 2.1299999999999999,
+                            Name = "Удельная производительность, т/м3",
                             Unit = "т/м3"
                         },
                         new
                         {
                             ParameterId = 2,
                             Alias = "Spec Сonsumption coke",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Удельный расход кокса",
+                            MaxValue = 550.0,
+                            MinValue = 450.0,
+                            Name = "Удельный расход кокса, кг/т чугуна",
                             Unit = "кг/т чугуна"
                         },
                         new
                         {
                             ParameterId = 3,
                             Alias = "Current downtime",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Текущие простои",
+                            MaxValue = 1.1000000000000001,
+                            MinValue = 0.90000000000000002,
+                            Name = "Текущие простои, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 4,
                             Alias = "Quiet running",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Тихий ход",
+                            MaxValue = 1.6499999999999999,
+                            MinValue = 1.3500000000000001,
+                            Name = "Тихий ход, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 5,
                             Alias = "The proportion of pellets",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Доля окатышей в шихте",
+                            MaxValue = 40.0,
+                            MinValue = 25.0,
+                            Name = "Доля окатышей в шихте, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 6,
                             Alias = "Share of sinter",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Доля агломерата в шихте",
+                            MaxValue = 75.0,
+                            MinValue = 60.0,
+                            Name = "Доля агломерата в шихте, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 7,
                             Alias = "Fe content",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание Fe в доменной шихте",
+                            MaxValue = 63.0,
+                            MinValue = 52.0,
+                            Name = "Содержание Fe в доменной шихте, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 8,
                             Alias = "Basicity  CaO/Sio2",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Основность ЖРМ CaO/Sio2",
+                            MaxValue = 1.1100000000000001,
+                            MinValue = 0.91000000000000003,
+                            Name = "Основность ЖРМ CaO/SiO2",
                             Unit = "-"
                         },
                         new
                         {
                             ParameterId = 9,
                             Alias = "Basicity  (CaO+MgO)/(SiO2)",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
+                            MaxValue = 1.3300000000000001,
+                            MinValue = 1.0900000000000001,
                             Name = "Основность ЖРМ (CaO+MgO)/(SiO2)",
                             Unit = "-"
                         },
@@ -136,8 +136,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 10,
                             Alias = "Basicity (CaO+MgO)/(SiO2+Al2O3)",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
+                            MaxValue = 1.1100000000000001,
+                            MinValue = 0.91000000000000003,
                             Name = "Основность ЖРМ (CaO+MgO)/(SiO2+Al2O3)",
                             Unit = "-"
                         },
@@ -145,206 +145,206 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 11,
                             Alias = "Ash in coke",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание золы в коксе",
+                            MaxValue = 13.0,
+                            MinValue = 11.0,
+                            Name = "Содержание золы в коксе, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 12,
                             Alias = "Moisture  in coke",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание влаги в коксе",
+                            MaxValue = 5.0,
+                            MinValue = 1.0,
+                            Name = "Содержание влаги в коксе, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 13,
                             Alias = "Volatile  in coke",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание летучих в коксе",
+                            MaxValue = 13.199999999999999,
+                            MinValue = 10.800000000000001,
+                            Name = "Содержание летучих в коксе, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 14,
                             Alias = "Coke  M25",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Прочность кокса по М25",
+                            MaxValue = 94.599999999999994,
+                            MinValue = 77.299999999999997,
+                            Name = "Прочность кокса по М25, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 15,
                             Alias = "Abrasion to M10",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Истираемость кокса по М10",
+                            MaxValue = 8.9100000000000001,
+                            MinValue = 7.29,
+                            Name = "Истираемость кокса по М10, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 16,
                             Alias = "CSR",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "CSR",
+                            MaxValue = 42.0,
+                            MinValue = 34.0,
+                            Name = "CSR, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 17,
                             Alias = "CRI",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "CRI",
+                            MaxValue = 41.0,
+                            MinValue = 33.0,
+                            Name = "CRI, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 18,
                             Alias = "Gas consumption",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Расход природного газа",
+                            MaxValue = 150.0,
+                            MinValue = 100.0,
+                            Name = "Расход природного газа, м3/т чугуна",
                             Unit = "м3/т чугуна"
                         },
                         new
                         {
                             ParameterId = 19,
                             Alias = "HotBlastO2",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание кислорода в дутье",
+                            MaxValue = 30.0,
+                            MinValue = 21.0,
+                            Name = "Содержание кислорода в дутье, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 20,
                             Alias = "TempHotBlast",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Температура горячего дутья",
+                            MaxValue = 1300.0,
+                            MinValue = 900.0,
+                            Name = "Температура горячего дутья, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 21,
                             Alias = "TempKolGaz",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Средняя температура колошникового газа",
+                            MaxValue = 350.0,
+                            MinValue = 80.0,
+                            Name = "Средняя температура колошникового газа, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 22,
                             Alias = "Degree of CO",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Степень использования СО",
+                            MaxValue = 48.0,
+                            MinValue = 39.0,
+                            Name = "Степень использования СО, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 23,
                             Alias = "Degree of CO H2",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Степень использования Н2",
+                            MaxValue = 9.9000000000000004,
+                            MinValue = 8.0999999999999996,
+                            Name = "Степень использования Н2, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 24,
                             Alias = "Temperature peripheral",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Средняя температура периферийных газов",
+                            MaxValue = 792.0,
+                            MinValue = 648.0,
+                            Name = "Средняя температура периферийных газов, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 25,
                             Alias = "Irregularity of gas temperature",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Окружная неравномерность температуры газа",
+                            MaxValue = 143.0,
+                            MinValue = 117.0,
+                            Name = "Окружная неравномерность температуры газа, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 26,
                             Alias = "Irregularities  top gas",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Неравномерность T колошникового газа по газоотводам",
+                            MaxValue = 165.0,
+                            MinValue = 135.0,
+                            Name = "Неравномерность T колошникового газа по газоотводам, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 27,
                             Alias = "Ratio  Tcp of peripheral to Tcp of gas",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Отношение Tcр периферийных термопар к Tcр колошникового газа",
+                            MaxValue = 0.33000000000000002,
+                            MinValue = 0.27000000000000002,
+                            Name = "Отношение Tcр периферийных термопар к Tcр колошникового газа, ед",
                             Unit = "ед"
                         },
                         new
                         {
                             ParameterId = 28,
                             Alias = "Reftemperatures 4th row",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Температура холодильников 4 ряд",
+                            MaxValue = 330.0,
+                            MinValue = 270.0,
+                            Name = "Температура холодильников 4 ряд, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 29,
                             Alias = "Theoretical  temperature",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Теоретическая температура горения",
+                            MaxValue = 2100.0,
+                            MinValue = 1900.0,
+                            Name = "Теоретическая температура горения, °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 30,
                             Alias = "Si content in cast iron",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Содержание в чугуне Si",
+                            MaxValue = 1.0,
+                            MinValue = 0.40000000000000002,
+                            Name = "Содержание в чугуне Si, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 31,
                             Alias = "Index of the bottom temperature ",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Индекс низа температурного поля",
+                            MaxValue = 0.55000000000000004,
+                            MinValue = 0.45000000000000001,
+                            Name = "Индекс низа, доли",
                             Unit = "доли"
                         },
                         new
                         {
                             ParameterId = 32,
                             Alias = "Index of the top of the temperature ",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Индекс верха температурного поля",
+                            MaxValue = 0.36299999999999999,
+                            MinValue = 0.29699999999999999,
+                            Name = "Индекс верха, доли",
                             Unit = "доли"
                         },
                         new
                         {
                             ParameterId = 33,
                             Alias = "Basicity_1",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
+                            MaxValue = 1.1499999999999999,
+                            MinValue = 0.98999999999999999,
                             Name = "Основность конечного шлака (CaO/(SiO2)",
                             Unit = "-"
                         },
@@ -352,8 +352,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 34,
                             Alias = "Basicity_2",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
+                            MaxValue = 1.375,
+                            MinValue = 1.125,
                             Name = "Основность конечного шлака (CaO+MgO)/(SiO2)",
                             Unit = " -"
                         },
@@ -361,8 +361,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 35,
                             Alias = "Basicity_3",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
+                            MaxValue = 1.1000000000000001,
+                            MinValue = 0.90000000000000002,
                             Name = "Основность конечного шлака (CaO+MgO)/(SiO2+Al2O3)",
                             Unit = " -"
                         },
@@ -370,108 +370,108 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 36,
                             Alias = "Sulfur distribution coefficient",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Коэффициент распределения серы",
+                            MaxValue = 0.5,
+                            MinValue = 0.29999999999999999,
+                            Name = "Коэффициент распределения серы, доли",
                             Unit = "°доли"
                         },
                         new
                         {
                             ParameterId = 37,
                             Alias = "Viscosity_1400",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Вязкость конечного шлака при 1400 °С",
+                            MaxValue = 0.495,
+                            MinValue = 0.40500000000000003,
+                            Name = "Вязкость конечного шлака при 1400 °С, Па∙с",
                             Unit = "Па∙с"
                         },
                         new
                         {
                             ParameterId = 38,
                             Alias = "Viscosity_1500",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Вязкость конечного шлака при 1500 °С",
+                            MaxValue = 0.40699999999999997,
+                            MinValue = 0.33300000000000002,
+                            Name = "Вязкость конечного шлака при 1500 °С, Па∙с",
                             Unit = "Па∙с"
                         },
                         new
                         {
                             ParameterId = 39,
                             Alias = "Viscosity_Tfin",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Вязкость конечного шлака при T конечной",
+                            MaxValue = 0.253,
+                            MinValue = 0.20699999999999999,
+                            Name = "Вязкость конечного шлака при T конечной, Па∙с",
                             Unit = "Па∙с"
                         },
                         new
                         {
                             ParameterId = 40,
                             Alias = "Viscosity gradients at 1400–1500 °C",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Градиенты вязкости шлака при 1400–1500 °С ",
+                            MaxValue = 0.021999999999999999,
+                            MinValue = 0.017999999999999999,
+                            Name = "Градиенты вязкости шлака при 1400–1500 °С, Па∙с",
                             Unit = "Па∙с/°С"
                         },
                         new
                         {
                             ParameterId = 41,
                             Alias = "Slag viscosity gradients at 0.7–2.5 Pa∙s",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Градиенты вязкости шлака при 0,7–2,5 Па∙с",
+                            MaxValue = 0.099000000000000005,
+                            MinValue = 0.081000000000000003,
+                            Name = "Градиенты вязкости шлака при 0,7–2,5 Па∙с, Па∙с",
                             Unit = "Па∙с/°С"
                         },
                         new
                         {
                             ParameterId = 42,
                             Alias = "P drop tuyere - top",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Перепад давления «фурмы – колошник»",
+                            MaxValue = 2.0,
+                            MinValue = 1.0,
+                            Name = "Перепад давления «фурмы – колошник», атм",
                             Unit = "атм"
                         },
                         new
                         {
                             ParameterId = 43,
                             Alias = "The degree  balancing by the gas flow",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Степень уравновешивания шихты газовым потоком",
+                            MaxValue = 50.0,
+                            MinValue = 40.0,
+                            Name = "Степень уравновешивания шихты газовым потоком, %",
                             Unit = "%"
                         },
                         new
                         {
                             ParameterId = 44,
                             Alias = "Cold blast consumption",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Расход холодного дутья»",
+                            MaxValue = 2896.3000000000002,
+                            MinValue = 2369.6999999999998,
+                            Name = "Расход холодного дутья, м3/мин»",
                             Unit = "м3/мин"
                         },
                         new
                         {
                             ParameterId = 45,
                             Alias = "hot blast pressure",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Давление горячего дутья",
-                            Unit = "ати/(МПа)"
+                            MaxValue = 2.7829999999999999,
+                            MinValue = 2.2770000000000001,
+                            Name = "Давление горячего дутья, атм/(МПа)",
+                            Unit = "атм/(МПа)"
                         },
                         new
                         {
                             ParameterId = 46,
                             Alias = "Gas T on the periphery",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Температура газа по радиусу колошника на периферии»",
+                            MaxValue = 308.0,
+                            MinValue = 252.0,
+                            Name = "Температура газа по радиусу колошника на периферии», °С",
                             Unit = "°С"
                         },
                         new
                         {
                             ParameterId = 47,
                             Alias = "Gas T  on the axis",
-                            MaxValue = 0.0,
-                            MinValue = 0.0,
-                            Name = "Температура газа по радиусу колошника на оси",
+                            MaxValue = 302.5,
+                            MinValue = 247.5,
+                            Name = "Температура газа по радиусу колошника на оси, °С",
                             Unit = "°С"
                         });
                 });
@@ -540,7 +540,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "TEIM",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Технико-экономический показатели плавки"
+                            Name = "Технико-экономические показатели плавки"
                         },
                         new
                         {
@@ -548,7 +548,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Properties of raw materials",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Свойства сырья (железорудных материалов, кокса)."
+                            Name = "Свойства сырья"
                         },
                         new
                         {
@@ -556,7 +556,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "IBGDM",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель дутьевого и газодинамического режима"
+                            Name = "Дутьевой и газодинамический режим"
                         },
                         new
                         {
@@ -564,7 +564,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Indicator of the thermal regime",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель теплового режима"
+                            Name = "Тепловой режим"
                         },
                         new
                         {
@@ -572,7 +572,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Indicator of the slag regime",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель шлакового режима"
+                            Name = "Шлаковый режима"
                         },
                         new
                         {
@@ -580,7 +580,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "IISF",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Интегральный показатель стабильности работы печи "
+                            Name = "Интегральный показатель"
                         });
                 });
 

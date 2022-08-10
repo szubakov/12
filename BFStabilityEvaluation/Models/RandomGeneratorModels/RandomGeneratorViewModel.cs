@@ -11,7 +11,7 @@ namespace BFStabilityEvaluation.Models.RandomGeneratorModels
         [Display(Name = "Начало периода")]
         public DateTime DateBeg { get; set; }
 
-        [Display(Name = "Начало периода")]
+        [Display(Name = "Конец периода")]
         public DateTime DateEnd { get; set; }
     }
 }

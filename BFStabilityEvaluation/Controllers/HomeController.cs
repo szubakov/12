@@ -1,4 +1,5 @@
 ﻿using BFStabilityEvaluation.Models;
+using BFStabilityEvaluation.Models.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -40,8 +41,9 @@ namespace BFStabilityEvaluation.Controllers
             vm.StabilitySignKriteriums = _context.StabilitySignKriteria
                 .Include(d => d.Parameter)
                 .ThenInclude(d => d.ParameterValues)
-                .Where(d => d.Parameter.ParameterValues.Any(s => s.TimeStampStart.Day >= DateTime.Now.Day - 30))
+                .Where(d => d.Parameter.ParameterValues.Any(s => s.Period == AsuPeriod.Day && s.TimeStampStart.Day >= DateTime.Now.Day - 30))
                 .ToList();
+
 
             return View(vm);
         }

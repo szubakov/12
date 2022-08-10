@@ -4,7 +4,15 @@
 
 <div class="container">
     <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
-    
+
+    <div class="form-floating mt-3">
+        <select class="form-control" data-live-search="true" value="Model.Parame">
+        </select>
+
+    </div>
+   
+   
+
     <table class="table table-hover table-client text-center caption-top">
         <caption><a class="btn btn-outline-dark" asp-controller="ParameterValue" asp-action="Create">Добавить значение</a></caption>
         <caption><a class="btn btn-outline-dark" asp-controller="RandomGenerator" asp-action="Index">Сгенерировать</a></caption>

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewComponents\**" />
+    <Content Remove="ViewComponents\**" />
+    <EmbeddedResource Remove="ViewComponents\**" />
+    <None Remove="ViewComponents\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\site.js" />
     <None Include="wwwroot\lib\bootstrap-icons\fonts\bootstrap-icons.woff2" />
     <None Include="wwwroot\lib\bootstrap\css\bootstrap.css.map" />
@@ -363,10 +370,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ViewComponents\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>

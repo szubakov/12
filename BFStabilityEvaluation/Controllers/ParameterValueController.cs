@@ -21,6 +21,7 @@ namespace BFStabilityEvaluation.Controllers
         {
             var param = await _context.ParameterValues
                 .Include(p => p.Parameter)
+                .Take(100)
                 .ToListAsync();
 
             return View(param);

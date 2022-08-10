@@ -46,41 +46,27 @@ namespace BFStabilityEvaluation.Controllers
                 {
                     var randomGenerator = new RandomGeneratorModel(parameter, model.Npech, model.DateBeg, model.DateEnd);
                     var paramsValues1 = randomGenerator.GetParameterValues(AsuPeriod.Hour);
-                 
-                   
 
                     await FillParameterValues(paramsValues1);
-                  
-
                 }
+
                 foreach (var parameter in parameters)
                 {
                     var randomGenerator = new RandomGeneratorModel(parameter, model.Npech, model.DateBeg, model.DateEnd);
-                   
                     var paramsValues = randomGenerator.GetParameterValues(AsuPeriod.Day);
 
-
-                    
                     await FillParameterValues(paramsValues);
-
                 }
 
                 foreach (var parameter in parameters)
                 {
                     var randomGenerator = new RandomGeneratorModel(parameter, model.Npech, model.DateBeg, model.DateEnd);
-
                     var paramsValues = randomGenerator.GetParameterValues(AsuPeriod.Smena);
 
-
-
                     await FillParameterValues(paramsValues);
-
                 }
 
                 return RedirectToAction("Index", "ParameterValue");
-
-            
-
             }
 
             return View(model);

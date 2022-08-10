@@ -89,8 +89,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 5,
                             Alias = "The proportion of pellets",
-                            MaxValue = 38.5,
-                            MinValue = 31.5,
+                            MaxValue = 40.0,
+                            MinValue = 25.0,
                             Name = "Доля окатышей в шихте, %",
                             Unit = "%"
                         },
@@ -98,8 +98,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 6,
                             Alias = "Share of sinter",
-                            MaxValue = 70.930000000000007,
-                            MinValue = 58.049999999999997,
+                            MaxValue = 75.0,
+                            MinValue = 60.0,
                             Name = "Доля агломерата в шихте, %",
                             Unit = "%"
                         },
@@ -107,8 +107,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 7,
                             Alias = "Fe content",
-                            MaxValue = 62.700000000000003,
-                            MinValue = 51.299999999999997,
+                            MaxValue = 63.0,
+                            MinValue = 52.0,
                             Name = "Содержание Fe в доменной шихте, %",
                             Unit = "%"
                         },
@@ -116,17 +116,17 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 8,
                             Alias = "Basicity  CaO/Sio2",
-                            MaxValue = 1.1143000000000001,
-                            MinValue = 0.91169999999999995,
-                            Name = "Основность ЖРМ CaO/Sio2",
+                            MaxValue = 1.1100000000000001,
+                            MinValue = 0.91000000000000003,
+                            Name = "Основность ЖРМ CaO/SiO2",
                             Unit = "-"
                         },
                         new
                         {
                             ParameterId = 9,
                             Alias = "Basicity  (CaO+MgO)/(SiO2)",
-                            MaxValue = 1.3375999999999999,
-                            MinValue = 1.0944,
+                            MaxValue = 1.3300000000000001,
+                            MinValue = 1.0900000000000001,
                             Name = "Основность ЖРМ (CaO+MgO)/(SiO2)",
                             Unit = "-"
                         },
@@ -134,8 +134,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 10,
                             Alias = "Basicity (CaO+MgO)/(SiO2+Al2O3)",
-                            MaxValue = 1.1000000000000001,
-                            MinValue = 0.90000000000000002,
+                            MaxValue = 1.1100000000000001,
+                            MinValue = 0.91000000000000003,
                             Name = "Основность ЖРМ (CaO+MgO)/(SiO2+Al2O3)",
                             Unit = "-"
                         },
@@ -143,8 +143,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 11,
                             Alias = "Ash in coke",
-                            MaxValue = 9.9000000000000004,
-                            MinValue = 8.0999999999999996,
+                            MaxValue = 13.0,
+                            MinValue = 11.0,
                             Name = "Содержание золы в коксе, %",
                             Unit = "%"
                         },
@@ -152,8 +152,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 12,
                             Alias = "Moisture  in coke",
-                            MaxValue = 4.9500000000000002,
-                            MinValue = 4.0499999999999998,
+                            MaxValue = 5.0,
+                            MinValue = 1.0,
                             Name = "Содержание влаги в коксе, %",
                             Unit = "%"
                         },
@@ -188,8 +188,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 16,
                             Alias = "CSR",
-                            MaxValue = 41.799999999999997,
-                            MinValue = 34.200000000000003,
+                            MaxValue = 42.0,
+                            MinValue = 34.0,
                             Name = "CSR, %",
                             Unit = "%"
                         },
@@ -197,8 +197,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 17,
                             Alias = "CRI",
-                            MaxValue = 40.700000000000003,
-                            MinValue = 33.299999999999997,
+                            MaxValue = 41.0,
+                            MinValue = 33.0,
                             Name = "CRI, %",
                             Unit = "%"
                         },
@@ -206,8 +206,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 18,
                             Alias = "Gas consumption",
-                            MaxValue = 14520.0,
-                            MinValue = 118800.0,
+                            MaxValue = 150.0,
+                            MinValue = 100.0,
                             Name = "Расход природного газа, м3/т чугуна",
                             Unit = "м3/т чугуна"
                         },
@@ -215,8 +215,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 19,
                             Alias = "HotBlastO2",
-                            MaxValue = 29.699999999999999,
-                            MinValue = 24.300000000000001,
+                            MaxValue = 30.0,
+                            MinValue = 21.0,
                             Name = "Содержание кислорода в дутье, %",
                             Unit = "%"
                         },
@@ -224,8 +224,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 20,
                             Alias = "TempHotBlast",
-                            MaxValue = 1337.5999999999999,
-                            MinValue = 1094.4000000000001,
+                            MaxValue = 1300.0,
+                            MinValue = 900.0,
                             Name = "Температура горячего дутья, °С",
                             Unit = "°С"
                         },
@@ -233,8 +233,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 21,
                             Alias = "TempKolGaz",
-                            MaxValue = 345.39999999999998,
-                            MinValue = 282.60000000000002,
+                            MaxValue = 350.0,
+                            MinValue = 80.0,
                             Name = "Средняя температура колошникового газа, °С",
                             Unit = "°С"
                         },
@@ -242,8 +242,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 22,
                             Alias = "Degree of CO",
-                            MaxValue = 47.740000000000002,
-                            MinValue = 39.060000000000002,
+                            MaxValue = 48.0,
+                            MinValue = 39.0,
                             Name = "Степень использования СО, %",
                             Unit = "%"
                         },
@@ -305,8 +305,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 29,
                             Alias = "Theoretical  temperature",
-                            MaxValue = 1100.0,
-                            MinValue = 900.0,
+                            MaxValue = 2100.0,
+                            MinValue = 1900.0,
                             Name = "Теоретическая температура горения, °С",
                             Unit = "°С"
                         },
@@ -314,8 +314,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 30,
                             Alias = "Si content in cast iron",
-                            MaxValue = 1.1000000000000001,
-                            MinValue = 0.90000000000000002,
+                            MaxValue = 1.0,
+                            MinValue = 0.40000000000000002,
                             Name = "Содержание в чугуне Si, %",
                             Unit = "%"
                         },
@@ -325,7 +325,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Index of the bottom temperature ",
                             MaxValue = 0.55000000000000004,
                             MinValue = 0.45000000000000001,
-                            Name = "Индекс низа температурного поля, доли",
+                            Name = "Индекс низа, доли",
                             Unit = "доли"
                         },
                         new
@@ -334,14 +334,14 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Index of the top of the temperature ",
                             MaxValue = 0.36299999999999999,
                             MinValue = 0.29699999999999999,
-                            Name = "Индекс верха температурного поля, доли",
+                            Name = "Индекс верха, доли",
                             Unit = "доли"
                         },
                         new
                         {
                             ParameterId = 33,
                             Alias = "Basicity_1",
-                            MaxValue = 1.21,
+                            MaxValue = 1.1499999999999999,
                             MinValue = 0.98999999999999999,
                             Name = "Основность конечного шлака (CaO/(SiO2)",
                             Unit = "-"
@@ -368,8 +368,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 36,
                             Alias = "Sulfur distribution coefficient",
-                            MaxValue = 0.021999999999999999,
-                            MinValue = 0.017999999999999999,
+                            MaxValue = 0.5,
+                            MinValue = 0.29999999999999999,
                             Name = "Коэффициент распределения серы, доли",
                             Unit = "°доли"
                         },
@@ -422,8 +422,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 42,
                             Alias = "P drop tuyere - top",
-                            MaxValue = 7.7000000000000002,
-                            MinValue = 6.2999999999999998,
+                            MaxValue = 2.0,
+                            MinValue = 1.0,
                             Name = "Перепад давления «фурмы – колошник», атм",
                             Unit = "атм"
                         },
@@ -431,8 +431,8 @@ namespace BFStabilityEvaluation.Migrations
                         {
                             ParameterId = 43,
                             Alias = "The degree  balancing by the gas flow",
-                            MaxValue = 27.5,
-                            MinValue = 22.5,
+                            MaxValue = 50.0,
+                            MinValue = 40.0,
                             Name = "Степень уравновешивания шихты газовым потоком, %",
                             Unit = "%"
                         },
@@ -538,7 +538,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "TEIM",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Технико-экономический показатели плавки"
+                            Name = "Технико-экономические показатели плавки"
                         },
                         new
                         {
@@ -546,7 +546,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Properties of raw materials",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Свойства сырья (железорудных материалов, кокса)."
+                            Name = "Свойства сырья"
                         },
                         new
                         {
@@ -554,7 +554,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "IBGDM",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель дутьевого и газодинамического режима"
+                            Name = "Дутьевой и газодинамический режим"
                         },
                         new
                         {
@@ -562,7 +562,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Indicator of the thermal regime",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель теплового режима"
+                            Name = "Тепловой режим"
                         },
                         new
                         {
@@ -570,7 +570,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "Indicator of the slag regime",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Показатель шлакового режима"
+                            Name = "Шлаковый режима"
                         },
                         new
                         {
@@ -578,7 +578,7 @@ namespace BFStabilityEvaluation.Migrations
                             Alias = "IISF",
                             LimitDanger = 0.0,
                             LimitWarning = 0.0,
-                            Name = "Интегральный показатель стабильности работы печи "
+                            Name = "Интегральный показатель"
                         });
                 });
 
