@@ -1,0 +1,54 @@
+﻿@model List<ParameterValue>
+
+@{ ViewData["Title"] = "Значения параметров"; }
+
+<div class="container">
+    <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
+    
+    <table class="table table-hover table-client text-center caption-top">
+        <caption><a class="btn btn-outline-dark" asp-controller="ParameterValue" asp-action="Create">Добавить значение</a></caption>
+        <caption><a class="btn btn-outline-dark" asp-controller="RandomGenerator" asp-action="Index">Сгенерировать</a></caption>
+        <thead>
+            <tr>
+
+                <th>Параметр</th>
+                <th>Номер печи</th>
+                <th>Отметка времени</th>
+                <th>Значение</th>
+                <th>Период</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.Parameter?.Name</td>
+                    <td>@item.Npech</td>
+                    <td>@item.TimeStampStart</td>
+                    <td>@item.Value</td>
+                    <td>
+                        @{
+                            string period = item.Period switch
+                            {
+                                AsuPeriod.Hour => "По часам",
+                                AsuPeriod.Smena => "По сменам",
+                                AsuPeriod.Day => "По дням",
+                                AsuPeriod.Week => "По неделям",
+                                _ => string.Empty
+                            };
+                        }
+
+                        @period
+                    </td>
+                    <td>
+                        <a asp-controller="ParameterValue" asp-action="Edit" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="Редактировать"><span class="bi bi-pencil fs-5"></span></a>
+                        |
+                        <a asp-controller="ParameterValue" asp-action="Delete" asp-route-id="@item.Id" data-bs-toggle="tooltip" title="Удалить"><span class="bi bi-trash fs-5"></span></a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

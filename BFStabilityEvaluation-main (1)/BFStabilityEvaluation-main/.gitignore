@@ -1,0 +1,16 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+packages/
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# Development settings
+appsettings.Development.json
+
+tex.txt

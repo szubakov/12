@@ -1,0 +1,59 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Стабильность работы доменной печи";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <ul class="list-group">
+                @foreach (var indicator in Model.Indicators)
+                {
+                    <li class="list-group-item">
+                        @if(indicator.Type == IndicatorType.Simple)
+                        {
+                            <a href="@Url.Action("Index", "Home", new { id = indicator.IndicatorId })">@indicator.Name</a>
+                            <span>- @Functions.RoundSmart(indicator.Value)</span>
+                        }
+                        else
+                        {
+                            <span>@indicator.Name</span>
+                            <span>- @Functions.RoundSmart(indicator.Value)</span>
+                        }
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="col-8">
+            <h2><span class="bi bi-boxes text-info fs-3"></span> @ViewData["Title"]</h2>
+            <table class="table table-hover table-client text-center caption-top">
+                <thead>
+                    <tr>
+                        <th>Показатель, ед. измерения</th>
+                        <th>Ранг</th>
+                        <th>Возможное отклонение</th>
+                        <th>Отклонение факт</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Criterions.Where(d => d.IndicatorId == Model.CurrentIndicatorId))
+                    {
+                        <tr>
+                            <td class="text-left">@item.Name, @item.Unit</td>
+                            <td>@item.Rang</td>
+                            <td>@item.AcceptableDelta</td>
+                            <td>
+                                @Functions.RoundSmart(item.StdDevValue)
+                            </td>
+                            <td>
+                                <p>@Functions.RoundSmart(item.AverageValue)</p>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
